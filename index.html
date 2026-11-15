@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f5ef">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Trung Đức & Trần Huệ | Wedding Invitation</title>
+<meta name="description" content="Trân trọng kính mời bạn đến chung vui cùng Trung Đức và Trần Huệ.">
+<style>
+:root{--paper:#f8f5ef;--ink:#37332f;--muted:#81786e;--gold:#b59a72;--line:#ded6ca;--white:#fffdfa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Be Vietnam Pro',Arial,sans-serif;line-height:1.75}a{color:inherit}.serif,h1,h2,h3,.names{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}button,input,select,textarea{font:inherit}.wrap{width:min(100% - 40px,980px);margin:auto}.eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:10px;color:var(--muted)}.section{padding:88px 0;text-align:center}.section h2{font-size:clamp(32px,5vw,48px);margin:8px 0 14px}.intro{max-width:720px;margin:0 auto;color:var(--muted);text-wrap:balance}
+#welcome .intro{max-width:760px;line-height:1.9}
+.couple-contacts{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:28px auto 0;max-width:620px}
+.contact-card{min-width:220px;padding:16px 22px;border:1px solid var(--line);background:rgba(255,253,250,.65)}
+.contact-card .role{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.contact-card a{color:var(--ink);text-decoration:none;font-size:15px}
+.contact-card a:hover{text-decoration:underline;color:var(--gold)}.rule{height:1px;width:54px;background:var(--gold);margin:24px auto}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;color:white;background:#51483f url('couple-cover.jpg') center top 30%/cover no-repeat;isolation:isolate;padding:40px 20px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.32),rgba(20,18,16,.48));z-index:-1}
+.hero-inner{width:min(100%,900px);max-width:900px}.hero .eyebrow{color:#f0e8dc}.hero .names{font-family:'Great Vibes','Cormorant Garamond',cursive;font-weight:400;font-size:clamp(68px,11.5vw,126px);line-height:1.12;letter-spacing:0;word-spacing:0;margin:24px auto 26px;font-kerning:normal;text-rendering:optimizeLegibility}.hero .name-line{display:block;white-space:nowrap;letter-spacing:0;word-spacing:0}.hero .amp{font-family:'Great Vibes','Cormorant Garamond',cursive;font-size:.62em;line-height:1;color:#e6d2b1;display:block;margin:2px 0 4px;letter-spacing:0}.hero-sub{letter-spacing:.2em;font-size:11px}.hero-date{margin-top:28px;letter-spacing:.18em;font-size:13px}.scroll{display:inline-block;margin-top:36px;padding:10px 22px;border:1px solid rgba(255,255,255,.7);text-decoration:none;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+nav{position:sticky;top:0;z-index:5;background:rgba(248,245,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;justify-content:center;gap:clamp(12px,3vw,30px);padding:12px 0;flex-wrap:wrap}nav a{text-decoration:none;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.countdown{display:flex;justify-content:center;gap:clamp(12px,4vw,34px);margin:32px 0}.countdown div{min-width:55px}.countdown strong{display:block;font:500 38px 'Cormorant Garamond',Georgia,serif}.countdown span{font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.couple-grid,.event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:40px}.photo{width:100%;aspect-ratio:4/5;object-fit:cover;background:#e8e1d7}.person h3{font-size:30px;margin:18px 0 5px}.person p{color:var(--muted);font-size:14px;margin:0}
+.event-card{border:1px solid var(--line);padding:34px 22px;background:rgba(255,253,250,.55)}.event-card h3{font-size:27px;margin:8px}.event-card p{color:var(--muted);font-size:14px}.btn{display:inline-block;border:1px solid var(--gold);padding:11px 20px;text-decoration:none;text-transform:uppercase;letter-spacing:.13em;font-size:10px;background:transparent;color:var(--ink);cursor:pointer}.btn:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.invite{max-width:680px;margin:36px auto 0;padding:42px 26px;border:1px solid var(--line);background:var(--white)}.invite .names-small{font:400 48px 'Great Vibes','Cormorant Garamond',cursive;margin:15px 0;letter-spacing:0}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}.gallery img{width:100%;height:280px;object-fit:cover;background:#e8e1d7}.gallery img:first-child{grid-column:span 2;grid-row:span 2;height:572px}
+.mapbox{margin:32px auto 0;max-width:760px;border:1px solid var(--line);padding:28px;background:var(--white)}.mapbox p{color:var(--muted)}
+form{max-width:600px;margin:34px auto 0;text-align:left;background:var(--white);border:1px solid var(--line);padding:28px}label{display:block;font-size:12px;letter-spacing:.04em;margin:15px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);background:#fffdfa;color:var(--ink);border-radius:0}textarea{min-height:90px;resize:vertical}.form-note{font-size:12px;color:var(--muted)}.status{font-size:13px;margin-top:12px;color:#58704f}
+footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names{font:400 58px 'Great Vibes','Cormorant Garamond',cursive;color:var(--ink);letter-spacing:0}footer p{color:var(--muted);font-size:11px;letter-spacing:.15em}
+@media(max-width:650px){.section{padding:64px 0}.wrap{width:min(100% - 28px,980px)}.couple-grid,.event-grid{grid-template-columns:1fr;gap:22px}.gallery{grid-template-columns:repeat(2,1fr);gap:8px}.gallery img{height:190px}.gallery img:first-child{grid-column:span 2;grid-row:auto;height:260px}form{padding:20px}.hero{min-height:92svh;padding:34px 14px}.hero .names{font-size:clamp(62px,13vw,88px);line-height:1.12;margin:22px auto}.hero .amp{margin:8px 0 10px}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+ <div class="hero-inner">
+  <div class="eyebrow">Trân trọng kính mời</div>
+  <div class="names" aria-label="Trung Đức và Trần Huệ"><span class="name-line">Trung Đức</span><span class="amp">&</span><span class="name-line">Trần Huệ</span></div>
+  <div class="hero-sub">WE'RE GETTING MARRIED</div>
+  <div class="hero-date" id="heroDate">SAVE THE DATE · NGÀY CƯỚI SẼ ĐƯỢC CẬP NHẬT</div>
+  <a class="scroll" href="#welcome">Khám phá thiệp cưới ↓</a>
+ </div>
+</header>
+<nav><div class="wrap">
+ <a href="#story">Câu chuyện</a><a href="#events">Lễ cưới</a><a href="#gallery">Album</a><a href="#location">Địa điểm</a><a href="#rsvp">Xác nhận</a>
+</div></nav>
+<main>
+<section class="section" id="welcome"><div class="wrap">
+ <div class="eyebrow">Save the date</div><h2 class="serif">Một ngày đặc biệt</h2>
+ <p class="intro">Chúng mình rất hạnh phúc khi được chia sẻ khoảnh khắc ý nghĩa này cùng gia đình và những người thân yêu.<br>Hãy cùng lưu lại ngày vui của Trung Đức &amp; Trần Huệ nhé!</p>
+ <div class="rule"></div><div class="eyebrow" id="dateText">Ngày cưới sẽ được cập nhật</div>
+ <div class="countdown" id="countdown"><div><strong>--</strong><span>Ngày</span></div><div><strong>--</strong><span>Giờ</span></div><div><strong>--</strong><span>Phút</span></div><div><strong>--</strong><span>Giây</span></div></div>
+ <p class="form-note">Đồng hồ đếm ngược sẽ tự chạy sau khi ngày cưới được điền vào phần cấu hình.</p>
+</div></section>
+<section class="section" id="story"><div class="wrap">
+ <div class="eyebrow">The couple</div><h2 class="serif">Hai chúng mình</h2><p class="intro">Từ những điều giản dị, chúng mình đã tìm thấy nhau và chọn cùng nhau viết tiếp câu chuyện của cuộc đời.</p>
+ <div class="couple-grid">
+  <article class="person"><img class="photo" src="bride.jpg" alt="Ảnh cô dâu"><h3>Trần Huệ</h3><p>Cô dâu</p></article>
+  <article class="person"><img class="photo" src="groom.jpg" alt="Ảnh chú rể"><h3>Trung Đức</h3><p>Chú rể</p></article>
+ </div>
+ <div class="couple-contacts" id="coupleContacts" aria-label="Thông tin liên hệ">
+  <div class="contact-card"><span class="role">Cô dâu · Trần Huệ</span><a id="bridePhoneLink" href="#">Số điện thoại sẽ được cập nhật</a></div>
+  <div class="contact-card"><span class="role">Chú rể · Trung Đức</span><a id="groomPhoneLink" href="#">Số điện thoại sẽ được cập nhật</a></div>
+ </div>
+</div></section>
+<section class="section" id="events"><div class="wrap">
+ <div class="eyebrow">The celebration</div><h2 class="serif">Lễ cưới của chúng mình</h2><p class="intro">Sự hiện diện của bạn là niềm vui và hạnh phúc của hai gia đình.</p>
+ <div class="event-grid">
+  <article class="event-card"><div class="eyebrow">The bride</div><h3>Lễ Vu Quy</h3><p id="brideEvent">Thời gian và địa điểm sẽ được cập nhật</p><p id="brideAddress"></p><a class="btn" id="brideMap" href="#" target="_blank" rel="noopener">Bản đồ nhà gái</a></article>
+  <article class="event-card"><div class="eyebrow">The groom</div><h3>Lễ Thành Hôn</h3><p id="groomEvent">Thời gian và địa điểm sẽ được cập nhật</p><p id="groomAddress"></p><a class="btn" id="groomMap" href="#" target="_blank" rel="noopener">Bản đồ nhà trai</a></article>
+ </div>
+</div></section>
+<section class="section" id="invitation"><div class="wrap">
+ <div class="eyebrow">You are invited</div><h2 class="serif">Trân trọng kính mời</h2>
+ <div class="invite"><div class="eyebrow">Wedding invitation</div><div class="names-small">Trung Đức & Trần Huệ</div><p>Chúng mình trân trọng kính mời bạn đến chung vui và chứng kiến khoảnh khắc đặc biệt trong hành trình tình yêu của chúng mình.</p><p>Mong được đón tiếp bạn trong ngày trọng đại!</p><div class="rule"></div><div class="eyebrow" id="inviteDate">Thông tin ngày cưới sẽ được cập nhật</div></div>
+</div></section>
+<section class="section" id="gallery"><div class="wrap">
+ <div class="eyebrow">Moments to remember</div><h2 class="serif">Album ảnh cưới</h2><p class="intro">Những khoảnh khắc chúng mình muốn lưu giữ và chia sẻ cùng bạn.</p>
+ <div class="gallery"><img src="gallery-1.jpg" alt="Ảnh cưới 1"><img src="gallery-2.jpg" alt="Ảnh cưới 2"><img src="gallery-3.jpg" alt="Ảnh cưới 3"><img src="gallery-4.jpg" alt="Ảnh cưới 4"><img src="gallery-5.jpg" alt="Ảnh cưới 5"></div>
+</div></section>
+<section class="section" id="location"><div class="wrap">
+ <div class="eyebrow">Where to meet</div><h2 class="serif">Địa điểm tổ chức</h2><p class="intro">Chúng mình rất mong được gặp bạn tại ngày vui.</p>
+ <div class="mapbox"><h3 class="serif">Nhà gái – Lễ Vu Quy</h3><p id="mapBrideText">Địa chỉ sẽ được cập nhật</p><a class="btn" id="mapBrideBtn" href="#" target="_blank" rel="noopener">Mở Google Maps</a><div class="rule"></div><h3 class="serif">Nhà trai – Lễ Thành Hôn</h3><p id="mapGroomText">Địa chỉ sẽ được cập nhật</p><a class="btn" id="mapGroomBtn" href="#" target="_blank" rel="noopener">Mở Google Maps</a></div>
+</div></section>
+<section class="section" id="rsvp"><div class="wrap">
+ <div class="eyebrow">Kindly reply</div><h2 class="serif">Xác nhận tham dự</h2><p class="intro">Bạn vui lòng cho chúng mình biết bạn có thể đến chung vui không nhé. Cảm ơn bạn rất nhiều!</p>
+ <form id="rsvpForm"><label for="guestName">Họ và tên *</label><input id="guestName" name="name" required placeholder="Tên của bạn">
+ <label for="attendance">Bạn có thể tham dự không? *</label><select id="attendance" name="attendance" required><option value="">Vui lòng chọn</option><option>Có, mình sẽ đến</option><option>Rất tiếc, mình không thể tham dự</option></select>
+ <label for="guests">Số người tham dự</label><select id="guests" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+ <label for="message">Lời chúc dành cho cô dâu chú rể</label><textarea id="message" name="message" placeholder="Gửi lời chúc của bạn..."></textarea>
+ <button class="btn" type="submit">Gửi xác nhận</button><p class="form-note">Biểu mẫu sẽ gửi phản hồi vào bảng Google Sheets sau khi bạn kết nối Google Apps Script theo hướng dẫn đi kèm.</p><div class="status" id="formStatus" role="status"></div></form>
+</div></section>
+</main>
+<footer><div class="eyebrow">With love</div><div class="names">Trung Đức & Trần Huệ</div><p>THANK YOU FOR BEING PART OF OUR STORY</p><a class="btn" href="#top">Trở về đầu trang ↑</a></footer>
+<script>
+// ===== CHỈNH THÔNG TIN TẠI ĐÂY =====
+const WEDDING = {
+  // Ví dụ: "2027-03-20T11:00:00+07:00". Để trống nếu chưa chốt ngày.
+ date: "2026-11-28T11:00:00+07:00",
+  dateLabel: "2026-11-28 tức 20-10 AL",
+  brideEvent: "Thời gian: 15:00 27-11-2026",
+  brideAddress: "Tổ chức tại: Nhà Hàng Hải Sinh TDP Ba Hàng, Phường Phổ Yên, Tỉnh Thái Nguyên",
+  brideMap: "https://maps.app.goo.gl/8n2SpeJEcAcnoqiB7",
+  groomEvent: "Thời gian: 16:00 28-11-2026",
+  groomAddress: "Tổ chức tại: Tư gia nhà Trai TDP Hoàng Đàm, Phường Vạn Xuân, Tỉnh Thái Nguyên",
+  groomMap: "https://maps.app.goo.gl/2Z9tuyp1hYcqpaBd9",
+  // Nhập số điện thoại dạng 0xxxxxxxxx để khách bấm vào là gọi được.
+  bridePhone: "0962921781",
+  groomPhone: "0856558933",
+  // Dán URL Web App Google Apps Script sau khi triển khai để lưu RSVP.
+  rsvpEndpoint: "https://script.google.com/macros/s/AKfycbwQp6z4u6dB989lIo3o8fvakOZ4rnJktuSbtRsAn4WJlDencQ7kPChlXCpKFclEfotU/exec"
+};
+document.getElementById("dateText").textContent=WEDDING.dateLabel;
+document.getElementById("heroDate").textContent=WEDDING.date ? new Date(WEDDING.date).toLocaleDateString("vi-VN") : "SAVE THE DATE · NGÀY CƯỚI SẼ ĐƯỢC CẬP NHẬT";
+document.getElementById("inviteDate").textContent=WEDDING.dateLabel;
+document.getElementById("brideEvent").textContent=WEDDING.brideEvent;
+document.getElementById("brideAddress").textContent=WEDDING.brideAddress;
+document.getElementById("groomEvent").textContent=WEDDING.groomEvent;
+document.getElementById("groomAddress").textContent=WEDDING.groomAddress;
+for(const [id,phone] of [["bridePhoneLink",WEDDING.bridePhone],["groomPhoneLink",WEDDING.groomPhone]]){const el=document.getElementById(id);if(phone){el.textContent=phone;el.href="tel:"+phone.replace(/[^0-9+]/g,"");}else{el.href="#";el.addEventListener("click",e=>{e.preventDefault();alert("Hãy điền số điện thoại trong phần cấu hình WEDDING ở cuối file index.html.");});}}
+document.getElementById("mapBrideText").textContent=WEDDING.brideAddress;
+document.getElementById("mapGroomText").textContent=WEDDING.groomAddress;
+for(const [id,url] of [["brideMap",WEDDING.brideMap],["mapBrideBtn",WEDDING.brideMap],["groomMap",WEDDING.groomMap],["mapGroomBtn",WEDDING.groomMap]]){const el=document.getElementById(id);if(url)el.href=url;else{el.style.opacity=".45";el.addEventListener("click",e=>{e.preventDefault();alert("Địa chỉ sẽ được cập nhật sau.");});}}
+function tick(){const box=document.getElementById("countdown");if(!WEDDING.date){box.innerHTML='<div><strong>--</strong><span>Ngày</span></div><div><strong>--</strong><span>Giờ</span></div><div><strong>--</strong><span>Phút</span></div><div><strong>--</strong><span>Giây</span></div>';return}
+ const diff=new Date(WEDDING.date).getTime()-Date.now();if(diff<=0){box.innerHTML='<p>Ngày vui đã đến! Hẹn gặp bạn ❤️</p>';return}
+ const vals=[Math.floor(diff/86400000),Math.floor(diff%86400000/3600000),Math.floor(diff%3600000/60000),Math.floor(diff%60000/1000)];
+ const labels=["Ngày","Giờ","Phút","Giây"];box.innerHTML=vals.map((v,i)=>`<div><strong>${String(v).padStart(2,"0")}</strong><span>${labels[i]}</span></div>`).join("");
+}
+tick();setInterval(tick,1000);
+document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const status = document.getElementById("formStatus");
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (!WEDDING.rsvpEndpoint) {
+    status.textContent = "Biểu mẫu chưa được kết nối Google Sheets. Vui lòng liên hệ cô dâu chú rể.";
+    return;
+  }
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.submittedAt = new Date().toISOString();
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Đang gửi...";
+  status.textContent = "";
+
+  try {
+    // no-cors is used because Google Apps Script Web Apps do not reliably
+    // expose a readable cross-origin response to a static website.
+    // Send JSON as text/plain so Apps Script can read e.postData.contents.
+    await fetch(WEDDING.rsvpEndpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(data)
+    });
+
+    status.textContent = "Đã gửi yêu cầu xác nhận. Cảm ơn bạn! Nếu cần điều chỉnh, vui lòng liên hệ cô dâu chú rể.";
+    form.reset();
+  } catch (err) {
+    console.error("RSVP submission error:", err);
+    status.textContent = "Chưa gửi được yêu cầu. Vui lòng kiểm tra kết nối mạng và thử lại.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Gửi xác nhận";
+  }
+});
+</script>
+</body></html>
