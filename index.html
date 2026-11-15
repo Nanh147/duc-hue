@@ -37,8 +37,111 @@ form{max-width:600px;margin:34px auto 0;text-align:left;background:var(--white);
 footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names{font:400 58px 'Great Vibes','Cormorant Garamond',cursive;color:var(--ink);letter-spacing:0}footer p{color:var(--muted);font-size:11px;letter-spacing:.15em}
 @media(max-width:650px){.section{padding:64px 0}.wrap{width:min(100% - 28px,980px)}.couple-grid,.event-grid{grid-template-columns:1fr;gap:22px}.gallery{grid-template-columns:repeat(2,1fr);gap:8px}.gallery img{height:190px}.gallery img:first-child{grid-column:span 2;grid-row:auto;height:260px}form{padding:20px}.hero{min-height:92svh;padding:34px 14px}.hero .names{font-size:clamp(62px,13vw,88px);line-height:1.12;margin:22px auto}.hero .amp{margin:8px 0 10px}}
 </style>
+ /* ===== MÀN HÌNH MỞ THIỆP ===== */
+
+#welcomeScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #f8f5ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#welcomeScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 45px 25px;
+    border: 1px solid var(--gold);
+    background: rgba(255,253,250,.7);
+}
+
+.welcome-subtitle {
+    font-size: 11px;
+    letter-spacing: .3em;
+    color: var(--muted);
+}
+
+.welcome-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(45px, 9vw, 75px);
+    font-weight: 400;
+    color: var(--ink);
+    margin: 30px 0;
+}
+
+.welcome-line {
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+.welcome-content p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#openInvitation {
+    margin-top: 25px;
+    padding: 15px 32px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+    letter-spacing: .2em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#openInvitation:hover {
+    background: var(--gold);
+    color: white;
+}
+
+.welcome-note {
+    margin-top: 20px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .08em;
+}
 </head>
 <body>
+ <!-- MÀN HÌNH MỞ THIỆP -->
+<div id="welcomeScreen">
+    <div class="welcome-content">
+        <div class="welcome-subtitle">WEDDING INVITATION</div>
+
+        <h1>Trung Đức & Trần Huệ</h1>
+
+        <div class="welcome-line"></div>
+
+        <p>Trân trọng kính mời bạn đến chung vui</p>
+
+        <button id="openInvitation">
+            MỞ THIỆP CƯỚI
+        </button>
+
+        <div class="welcome-note">
+            Chạm để mở thiệp và thưởng thức âm nhạc
+        </div>
+    </div>
+</div>
+
+<!-- NHẠC NỀN -->
+<audio id="weddingMusic" loop preload="none">
+    <source src="wedding-music.mp3" type="audio/mpeg">
+</audio>
 <header class="hero" id="top">
  <div class="hero-inner">
   <div class="eyebrow">Trân trọng kính mời</div>
@@ -175,6 +278,29 @@ document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
     submitButton.disabled = false;
     submitButton.textContent = "Gửi xác nhận";
   }
+});
+// ===== MỞ THIỆP VÀ PHÁT NHẠC =====
+
+const openButton = document.getElementById("openInvitation");
+const welcomeScreen = document.getElementById("welcomeScreen");
+const weddingMusic = document.getElementById("weddingMusic");
+
+openButton.addEventListener("click", async function () {
+
+    try {
+        // Phát nhạc sau thao tác chạm của khách
+        await weddingMusic.play();
+
+        // Ẩn màn hình mở thiệp
+        welcomeScreen.classList.add("hide");
+
+        // Cho phép cuộn trang
+        document.body.style.overflow = "";
+
+    } catch (error) {
+        alert("Không thể phát nhạc. Vui lòng kiểm tra file MP3.");
+    }
+
 });
 </script>
 </body></html>
