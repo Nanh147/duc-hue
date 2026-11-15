@@ -36,8 +36,7 @@ nav{position:sticky;top:0;z-index:5;background:rgba(248,245,239,.94);backdrop-fi
 form{max-width:600px;margin:34px auto 0;text-align:left;background:var(--white);border:1px solid var(--line);padding:28px}label{display:block;font-size:12px;letter-spacing:.04em;margin:15px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);background:#fffdfa;color:var(--ink);border-radius:0}textarea{min-height:90px;resize:vertical}.form-note{font-size:12px;color:var(--muted)}.status{font-size:13px;margin-top:12px;color:#58704f}
 footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names{font:400 58px 'Great Vibes','Cormorant Garamond',cursive;color:var(--ink);letter-spacing:0}footer p{color:var(--muted);font-size:11px;letter-spacing:.15em}
 @media(max-width:650px){.section{padding:64px 0}.wrap{width:min(100% - 28px,980px)}.couple-grid,.event-grid{grid-template-columns:1fr;gap:22px}.gallery{grid-template-columns:repeat(2,1fr);gap:8px}.gallery img{height:190px}.gallery img:first-child{grid-column:span 2;grid-row:auto;height:260px}form{padding:20px}.hero{min-height:92svh;padding:34px 14px}.hero .names{font-size:clamp(62px,13vw,88px);line-height:1.12;margin:22px auto}.hero .amp{margin:8px 0 10px}}
-</style>
- /* ===== MÀN HÌNH MỞ THIỆP ===== */
+/* ===== MÀN HÌNH MỞ THIỆP ===== */
 
 #welcomeScreen {
     position: fixed;
@@ -115,8 +114,9 @@ footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names
     color: var(--muted);
     letter-spacing: .08em;
 }
+</style>
 </head>
-<body>
+<body style="overflow:hidden;">
  <!-- MÀN HÌNH MỞ THIỆP -->
 <div id="welcomeScreen">
     <div class="welcome-content">
@@ -128,7 +128,7 @@ footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names
 
         <p>Trân trọng kính mời bạn đến chung vui</p>
 
-        <button id="openInvitation">
+        <button id="openInvitation" type="button">
             MỞ THIỆP CƯỚI
         </button>
 
