@@ -139,10 +139,13 @@ footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names
     font-family: Arial, sans-serif;
     font-size: 21px;
     line-height: 1;
-    cursor: pointer;
+    cursor: grab;
     -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
+#musicToggle.dragging { cursor: grabbing; }
 #musicToggle.show {
     display: flex !important;
     visibility: visible !important;
@@ -188,7 +191,7 @@ footer{text-align:center;padding:58px 20px 70px;background:#eee8de}footer .names
 <audio id="weddingMusic" loop preload="none">
     <source src="wedding-music.mp3" type="audio/mpeg">
 </audio>
-<button id="musicToggle" type="button" aria-label="Tắt nhạc" aria-pressed="true" title="Tắt nhạc">♫</button>
+<button id="musicToggle" type="button" aria-label="Tắt nhạc" aria-pressed="true" title="Kéo để di chuyển · Bấm để tắt nhạc">♫</button>
 <header class="hero" id="top">
  <div class="hero-inner">
   <div class="eyebrow">Trân trọng kính mời</div>
@@ -376,8 +379,85 @@ musicToggle.addEventListener("click", async function () {
 weddingMusic.addEventListener("pause", function () {
     updateMusicButton(false);
 });
+
 weddingMusic.addEventListener("play", function () {
     updateMusicButton(true);
 });
+
+// Cho phép kéo nút nhạc đến vị trí dễ nhìn trên cả điện thoại và máy tính.
+(function enableMusicButtonDrag() {
+    let startX = 0, startY = 0;
+    let startLeft = 0, startTop = 0;
+    let moved = false;
+    let dragging = false;
+
+    musicToggle.addEventListener("pointerdown", function (event) {
+        if (event.button !== undefined && event.button !== 0) return;
+
+        const rect = musicToggle.getBoundingClientRect();
+        startX = event.clientX;
+        startY = event.clientY;
+        startLeft = rect.left;
+        startTop = rect.top;
+        moved = false;
+        dragging = true;
+
+        musicToggle.style.left = rect.left + "px";
+        musicToggle.style.top = rect.top + "px";
+        musicToggle.style.right = "auto";
+        musicToggle.style.bottom = "auto";
+
+        try { musicToggle.setPointerCapture(event.pointerId); } catch (_) {}
+    });
+
+    musicToggle.addEventListener("pointermove", function (event) {
+        if (!dragging) return;
+
+        const dx = event.clientX - startX;
+        const dy = event.clientY - startY;
+
+        if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+        if (!moved) return;
+
+        const maxLeft = window.innerWidth - musicToggle.offsetWidth - 8;
+        const maxTop = window.innerHeight - musicToggle.offsetHeight - 8;
+        const left = Math.max(8, Math.min(maxLeft, startLeft + dx));
+        const top = Math.max(8, Math.min(maxTop, startTop + dy));
+
+        musicToggle.style.left = left + "px";
+        musicToggle.style.top = top + "px";
+        musicToggle.classList.add("dragging");
+    });
+
+    function stopDragging() {
+        if (!dragging) return;
+        dragging = false;
+        musicToggle.classList.remove("dragging");
+
+        // Nếu vừa kéo nút, bỏ qua sự kiện click phát sinh sau thao tác kéo.
+        if (moved) {
+            musicToggle.dataset.dragged = "true";
+            setTimeout(() => { delete musicToggle.dataset.dragged; }, 250);
+        }
+    }
+
+    musicToggle.addEventListener("pointerup", stopDragging);
+    musicToggle.addEventListener("pointercancel", stopDragging);
+
+    musicToggle.addEventListener("click", function (event) {
+        if (musicToggle.dataset.dragged === "true") {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+    }, true);
+
+    window.addEventListener("resize", function () {
+        if (!musicToggle.style.left || !musicToggle.style.top) return;
+        const maxLeft = window.innerWidth - musicToggle.offsetWidth - 8;
+        const maxTop = window.innerHeight - musicToggle.offsetHeight - 8;
+        musicToggle.style.left = Math.max(8, Math.min(maxLeft, parseFloat(musicToggle.style.left))) + "px";
+        musicToggle.style.top = Math.max(8, Math.min(maxTop, parseFloat(musicToggle.style.top))) + "px";
+    });
+})();
 </script>
 </body></html>
